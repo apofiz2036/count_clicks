@@ -1,9 +1,8 @@
 import requests
 import os
 import argparse
-
 from dotenv import load_dotenv
-load_dotenv()
+
 
 
 FOR_SHORT_URL = 'https://api-ssl.bitly.com/v4/shorten/'
@@ -11,6 +10,7 @@ IS_BITLINK_URL = 'https://api-ssl.bitly.com/v4/bitlinks/'
 
 
 def main():
+    load_dotenv()
     bitly_token = os.environ['BITLY_TOKEN']
     parser = argparse.ArgumentParser(
         description='Выдаёт битлинк или считает количество переходов'
